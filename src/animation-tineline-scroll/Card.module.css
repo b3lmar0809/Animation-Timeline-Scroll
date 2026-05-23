@@ -1,0 +1,60 @@
+/**
+*Card.module class
+*
+* @version 1.0.0 - 22 may. 2026
+* @author Matias Belmar - mati.belmar0625@gmail.com
+* @since 1.0.0 - 22 may. 2026
+*
+**/
+
+/* Estado inicial: invisible y desplazada 24px hacia abajo */
+.card {
+    opacity: 0;
+    transform: translateY(24px);
+    /* Anima solo opacity y transform para no afectar layout ni disparar repaints */
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    background: var(--social-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    cursor: default;
+}
+
+/* Estado final: clase agregada por useScrollReveal cuando el elemento entra al viewport */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.card h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-h);
+}
+
+.card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+}
